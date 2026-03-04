@@ -1,0 +1,802 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.14.2 on win32)" generated="2026-03-04T15:08:51.557557" rpa="false" schemaversion="5">
+<suite id="s1" name="From Calendar Tests" source="D:\Source\bijib-qa-automation\Projects\Bijib_PMS\tests\BookAppointment\from_calendar_tests.robot">
+<kw name="Open Book Appointment On Dashboard" owner="book_appointment_page" type="SETUP">
+<kw name="Open Browser Login And Goto Dashboard" owner="Common">
+<kw name="Open Browser Keyword" owner="Common">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-03-04T15:08:51.867237" level="INFO">Opening browser 'chrome' to base url 'https://test.bijib.in'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-03-04T15:08:51.867004" elapsed="3.127358"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-03-04T15:08:54.994961" elapsed="0.040621"/>
+</kw>
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>${SELENIUM_SPEED}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2026-03-04T15:08:55.035810" elapsed="0.000294"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2026-03-04T15:08:55.057672" level="INFO">Page title is 'Bijib'.</msg>
+<arg>${WEB_TITLE}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2026-03-04T15:08:55.036252" elapsed="0.021623"/>
+</kw>
+<status status="PASS" start="2026-03-04T15:08:51.866403" elapsed="3.191644"/>
+</kw>
+<kw name="Login and Goto Dashboard" owner="Login">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${LOGIN_PAGE_TITLE}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-03-04T15:08:55.059333" elapsed="0.016092"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Login Page Loaded Successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-04T15:08:55.075614" elapsed="0.000476"/>
+</kw>
+<kw name="Textfield With Placeholder" owner="TextFields">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-03-04T15:08:55.076954" level="INFO">${INPUT_PATH} = xpath=(//input[@placeholder="Enter Username"])[1]</msg>
+<var>${INPUT_PATH}</var>
+<arg>xpath=(//input[@placeholder="${PLACEHOLDER}"])[${INDEX}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-03-04T15:08:55.076610" elapsed="0.000377"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_PATH}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-04T15:08:55.077120" elapsed="0.022086"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${INPUT_PATH}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-04T15:08:55.099457" elapsed="0.039319"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-04T15:08:55.139224" level="INFO">Typing text 'testuser3' into text field 'xpath=(//input[@placeholder="Enter Username"])[1]'.</msg>
+<arg>${INPUT_PATH}</arg>
+<arg>${VALUE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-04T15:08:55.138978" elapsed="0.087786"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Textfield with placeholder ${PLACEHOLDER} filled with value ${VALUE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-04T15:08:55.226968" elapsed="0.000475"/>
+</kw>
+<arg>Enter Username</arg>
+<arg>${LOGINNAME}</arg>
+<status status="PASS" start="2026-03-04T15:08:55.076292" elapsed="0.151262"/>
+</kw>
+<kw name="Textfield With Placeholder" owner="TextFields">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-03-04T15:08:55.228765" level="INFO">${INPUT_PATH} = xpath=(//input[@placeholder="Enter Password"])[1]</msg>
+<var>${INPUT_PATH}</var>
+<arg>xpath=(//input[@placeholder="${PLACEHOLDER}"])[${INDEX}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-03-04T15:08:55.228361" elapsed="0.000442"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_PATH}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-04T15:08:55.228958" elapsed="0.020587"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${INPUT_PATH}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-04T15:08:55.249782" elapsed="0.031693"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-04T15:08:55.281906" level="INFO">Typing text 'E7q_35&amp;ZR]5D*iRZ' into text field 'xpath=(//input[@placeholder="Enter Password"])[1]'.</msg>
+<arg>${INPUT_PATH}</arg>
+<arg>${VALUE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-04T15:08:55.281664" elapsed="0.077752"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Textfield with placeholder ${PLACEHOLDER} filled with value ${VALUE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-04T15:08:55.359602" elapsed="0.000447"/>
+</kw>
+<arg>Enter Password</arg>
+<arg>${PASSWORD}</arg>
+<status status="PASS" start="2026-03-04T15:08:55.227950" elapsed="0.132183"/>
+</kw>
+<kw name="Button Click" owner="Buttons">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-03-04T15:08:55.360859" level="INFO">${BASE_PATH} = //button[normalize-space()="Login"]</msg>
+<var>${BASE_PATH}</var>
+<arg>//button[normalize-space()="${LABEL}"]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-03-04T15:08:55.360558" elapsed="0.000333"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-03-04T15:08:55.361312" level="INFO">${BUTTON_PATH} = xpath=(//button[normalize-space()="Login"])[1]</msg>
+<var>${BUTTON_PATH}</var>
+<arg>xpath=(${BASE_PATH})[${INDEX}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-03-04T15:08:55.361012" elapsed="0.000330"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BUTTON_PATH}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-04T15:08:55.361468" elapsed="0.019752"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-03-04T15:08:55.381619" level="INFO">Clicking button 'xpath=(//button[normalize-space()="Login"])[1]'.</msg>
+<arg>${BUTTON_PATH}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-04T15:08:55.381405" elapsed="0.078677"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Clicked button with label ${LABEL}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-04T15:08:55.460358" elapsed="0.000638"/>
+</kw>
+<arg>Login</arg>
+<status status="PASS" start="2026-03-04T15:08:55.360319" elapsed="0.100795"/>
+</kw>
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>${DASHBOARD_URL}</arg>
+<arg>10s</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" start="2026-03-04T15:08:55.461280" elapsed="0.875407"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Navigated to Dashboard Successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-04T15:08:56.336874" elapsed="0.000461"/>
+</kw>
+<status status="PASS" start="2026-03-04T15:08:55.058574" elapsed="1.278855"/>
+</kw>
+<kw name="Goto Service" owner="Service">
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2026-03-04T15:08:56.343647" level="INFO">Current location is 'https://test.bijib.in/#/layout/dashboard'.</msg>
+<arg>${DASHBOARD_URL}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2026-03-04T15:08:56.337953" elapsed="0.005814"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Navigated to Dashboard</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-04T15:08:56.343954" elapsed="0.000462"/>
+</kw>
+<kw name="Click Element With Path" owner="Buttons">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-03-04T15:08:56.345789" level="INFO">${ELEMENT_PATH} = xpath=(//li[@title="Bijib PMS"]/div[normalize-space()="Bijib PMS"])[1]</msg>
+<var>${ELEMENT_PATH}</var>
+<arg>xpath=(${PATH})[${INDEX}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-03-04T15:08:56.345315" elapsed="0.000514"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ELEMENT_PATH}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-04T15:08:56.346010" elapsed="0.229484"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-04T15:08:56.575920" level="INFO">Clicking element 'xpath=(//li[@title="Bijib PMS"]/div[normalize-space()="Bijib PMS"])[1]'.</msg>
+<arg>${ELEMENT_PATH}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-04T15:08:56.575702" elapsed="0.061440"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Clicked element with path ${PATH}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-04T15:08:56.637323" elapsed="0.000455"/>
+</kw>
+<arg>//li[@title="${SERVICE_NAME}"]/div[normalize-space()="${SERVICE_NAME}"]</arg>
+<status status="PASS" start="2026-03-04T15:08:56.344673" elapsed="0.293187"/>
+</kw>
+<kw name="Click Element With Path" owner="Buttons">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-03-04T15:08:56.638646" level="INFO">${ELEMENT_PATH} = xpath=(//div[contains(@class,"submenu dsktp-vw-dsply")]/span[normalize-space()="Bijib PMS"]/following-sibling::ul//li[normalize-space()="TEST HOSPITAL"])[1]</msg>
+<var>${ELEMENT_PATH}</var>
+<arg>xpath=(${PATH})[${INDEX}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-03-04T15:08:56.638332" elapsed="0.000346"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ELEMENT_PATH}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-04T15:08:56.638802" elapsed="0.230412"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-04T15:08:56.869614" level="INFO">Clicking element 'xpath=(//div[contains(@class,"submenu dsktp-vw-dsply")]/span[normalize-space()="Bijib PMS"]/following-sibling::ul//li[normalize-space()="TEST HOSPITAL"])[1]'.</msg>
+<arg>${ELEMENT_PATH}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-04T15:08:56.869401" elapsed="0.070120"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Clicked element with path ${PATH}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-04T15:08:56.939709" elapsed="0.000466"/>
+</kw>
+<arg>//div[contains(@class,"submenu dsktp-vw-dsply")]/span[normalize-space()="${SERVICE_NAME}"]/following-sibling::ul//li[normalize-space()="${HOSPITAL_NAME}"]</arg>
+<status status="PASS" start="2026-03-04T15:08:56.638031" elapsed="0.302229"/>
+</kw>
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>${SERVICE_URL}</arg>
+<arg>${TIMEOUT_LONG}</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" start="2026-03-04T15:08:56.940414" elapsed="2.264663"/>
+</kw>
+<arg>Bijib PMS</arg>
+<arg>TEST HOSPITAL</arg>
+<arg>${PMS_DASHBOARD_URL}</arg>
+<status status="PASS" start="2026-03-04T15:08:56.337640" elapsed="2.867550"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Logged in and navigated to dashboard</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-04T15:08:59.205349" elapsed="0.000442"/>
+</kw>
+<status status="PASS" start="2026-03-04T15:08:51.866186" elapsed="7.339682"/>
+</kw>
+<kw name="Textfield With Placeholder" owner="TextFields">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-03-04T15:08:59.206643" level="INFO">${INPUT_PATH} = xpath=(//input[@placeholder="Search by Name, Email, Mobile, or MRN"])[1]</msg>
+<var>${INPUT_PATH}</var>
+<arg>xpath=(//input[@placeholder="${PLACEHOLDER}"])[${INDEX}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-03-04T15:08:59.206328" elapsed="0.000347"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_PATH}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-04T15:08:59.206805" elapsed="0.033814"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${INPUT_PATH}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-04T15:08:59.240836" elapsed="0.076576"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-04T15:08:59.317825" level="INFO">Typing text 'John Lee' into text field 'xpath=(//input[@placeholder="Search by Name, Email, Mobile, or MRN"])[1]'.</msg>
+<arg>${INPUT_PATH}</arg>
+<arg>${VALUE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-04T15:08:59.317592" elapsed="0.162174"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Textfield with placeholder ${PLACEHOLDER} filled with value ${VALUE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-04T15:08:59.479995" elapsed="0.000584"/>
+</kw>
+<arg>Search by Name, Email, Mobile, or MRN</arg>
+<arg>${PatientName}</arg>
+<status status="PASS" start="2026-03-04T15:08:59.206044" elapsed="0.274642"/>
+</kw>
+<kw name="Click Element With Path" owner="Buttons">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-03-04T15:08:59.481703" level="INFO">${ELEMENT_PATH} = xpath=(//lib-autocomplete/div/div/div/div/div/div[contains(text(),"John Lee")])[1]</msg>
+<var>${ELEMENT_PATH}</var>
+<arg>xpath=(${PATH})[${INDEX}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-03-04T15:08:59.481317" elapsed="0.000421"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ELEMENT_PATH}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-04T15:08:59.481885" elapsed="0.693623"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-04T15:09:00.175925" level="INFO">Clicking element 'xpath=(//lib-autocomplete/div/div/div/div/div/div[contains(text(),"John Lee")])[1]'.</msg>
+<arg>${ELEMENT_PATH}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-04T15:09:00.175701" elapsed="0.144587"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Clicked element with path ${PATH}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-04T15:09:00.320464" elapsed="0.000494"/>
+</kw>
+<arg>//lib-autocomplete/div/div/div/div/div/div[contains(text(),"${PatientName}")]</arg>
+<status status="PASS" start="2026-03-04T15:08:59.480942" elapsed="0.840102"/>
+</kw>
+<kw name="Click Element With Path" owner="Buttons">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-03-04T15:09:00.321786" level="INFO">${ELEMENT_PATH} = xpath=(//div[@title="Book Appointment"])[1]</msg>
+<var>${ELEMENT_PATH}</var>
+<arg>xpath=(${PATH})[${INDEX}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-03-04T15:09:00.321470" elapsed="0.000373"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ELEMENT_PATH}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-04T15:09:00.321968" elapsed="0.020807"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-04T15:09:00.343169" level="INFO">Clicking element 'xpath=(//div[@title="Book Appointment"])[1]'.</msg>
+<arg>${ELEMENT_PATH}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-04T15:09:00.342959" elapsed="0.097537"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Clicked element with path ${PATH}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-04T15:09:00.440679" elapsed="0.000455"/>
+</kw>
+<arg>//div[@title="Book Appointment"]</arg>
+<status status="PASS" start="2026-03-04T15:09:00.321226" elapsed="0.119992"/>
+</kw>
+<arg>John Lee</arg>
+<status status="PASS" start="2026-03-04T15:08:51.865851" elapsed="8.575432"/>
+</kw>
+<test id="s1-t1" name="Validate Doctor Is Mandatory" line="11">
+<kw name="Click Book Appointment" owner="book_appointment_page">
+<kw name="Button Click" owner="Buttons">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-03-04T15:09:00.442710" level="INFO">${BASE_PATH} = //button[normalize-space()="Book Appointment"]</msg>
+<var>${BASE_PATH}</var>
+<arg>//button[normalize-space()="${LABEL}"]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-03-04T15:09:00.442407" elapsed="0.000334"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-03-04T15:09:00.443166" level="INFO">${BUTTON_PATH} = xpath=(//button[normalize-space()="Book Appointment"])[1]</msg>
+<var>${BUTTON_PATH}</var>
+<arg>xpath=(${BASE_PATH})[${INDEX}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-03-04T15:09:00.442860" elapsed="0.000336"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BUTTON_PATH}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-04T15:09:00.443318" elapsed="0.353393"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-03-04T15:09:00.797245" level="INFO">Clicking button 'xpath=(//button[normalize-space()="Book Appointment"])[1]'.</msg>
+<arg>${BUTTON_PATH}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-04T15:09:00.796927" elapsed="0.300838"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Clicked button with label ${LABEL}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-04T15:09:01.097962" elapsed="0.001780"/>
+</kw>
+<arg>${BOOK_APPOINTMENT_BTN}</arg>
+<status status="PASS" start="2026-03-04T15:09:00.442135" elapsed="0.657984"/>
+</kw>
+<status status="PASS" start="2026-03-04T15:09:00.441874" elapsed="0.658342"/>
+</kw>
+<kw name="Error Alert Should Be" owner="status_label_page">
+<kw name="Get Error Alert Message" owner="status_label_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ERROR_ALERT}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-04T15:09:01.101564" elapsed="0.079477"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-03-04T15:09:01.226846" level="INFO">${msg} = Select Doctor</msg>
+<var>${msg}</var>
+<arg>${ERROR_ALERT}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-04T15:09:01.181230" elapsed="0.045660"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-03-04T15:09:01.227259" level="INFO">${msg} = Select Doctor</msg>
+<var>${msg}</var>
+<arg>${msg}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-03-04T15:09:01.227057" elapsed="0.000231"/>
+</kw>
+<return>
+<value>${msg}</value>
+<status status="PASS" start="2026-03-04T15:09:01.227354" elapsed="0.000073"/>
+</return>
+<msg time="2026-03-04T15:09:01.227618" level="INFO">${actual} = Select Doctor</msg>
+<var>${actual}</var>
+<status status="PASS" start="2026-03-04T15:09:01.101322" elapsed="0.126334"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-03-04T15:09:01.227799" elapsed="0.000367"/>
+</kw>
+<arg>Select Doctor</arg>
+<status status="PASS" start="2026-03-04T15:09:01.100921" elapsed="0.127321"/>
+</kw>
+<status status="PASS" start="2026-03-04T15:09:00.441367" elapsed="0.787137"/>
+</test>
+<test id="s1-t2" name="Validate Appointment Type Is Mandatory" line="15">
+<kw name="Select Doctor" owner="book_appointment_page">
+<kw name="Dropdown With Label" owner="Dropdowns">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-03-04T15:09:01.230499" level="INFO">${BASE_PATH} = //div[label[text()="Doctor"]]/following-sibling::</msg>
+<var>${BASE_PATH}</var>
+<arg>//div[label[text()="${LABEL}"]]/following-sibling::</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-03-04T15:09:01.230191" elapsed="0.000339"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-03-04T15:09:01.230951" level="INFO">${DROPDOWN_PATH} = xpath=(//div[label[text()="Doctor"]]/following-sibling::div/div/select)[1]</msg>
+<var>${DROPDOWN_PATH}</var>
+<arg>xpath=(${BASE_PATH}div/div/select)[${INDEX}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-03-04T15:09:01.230650" elapsed="0.000332"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${DROPDOWN_PATH}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-04T15:09:01.231105" elapsed="0.047246"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2026-03-04T15:09:01.278814" level="INFO">Selecting options from selection list 'xpath=(//div[label[text()="Doctor"]]/following-sibling::div/div/select)[1]' by label test User3.</msg>
+<arg>${DROPDOWN_PATH}</arg>
+<arg>${VALUE}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2026-03-04T15:09:01.278555" elapsed="0.240042"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Dropdown with label ${LABEL} selected value ${VALUE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-04T15:09:01.518915" elapsed="0.000652"/>
+</kw>
+<arg>Doctor</arg>
+<arg>${Doctor}</arg>
+<status status="PASS" start="2026-03-04T15:09:01.229907" elapsed="0.289776"/>
+</kw>
+<arg>test User3</arg>
+<status status="PASS" start="2026-03-04T15:09:01.229613" elapsed="0.290138"/>
+</kw>
+<kw name="Click Book Appointment" owner="book_appointment_page">
+<kw name="Button Click" owner="Buttons">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-03-04T15:09:01.521023" level="INFO">${BASE_PATH} = //button[normalize-space()="Book Appointment"]</msg>
+<var>${BASE_PATH}</var>
+<arg>//button[normalize-space()="${LABEL}"]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-03-04T15:09:01.520689" elapsed="0.000369"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-03-04T15:09:01.521545" level="INFO">${BUTTON_PATH} = xpath=(//button[normalize-space()="Book Appointment"])[1]</msg>
+<var>${BUTTON_PATH}</var>
+<arg>xpath=(${BASE_PATH})[${INDEX}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-03-04T15:09:01.521220" elapsed="0.000356"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BUTTON_PATH}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-04T15:09:01.521748" elapsed="0.064865"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-03-04T15:09:01.587232" level="INFO">Clicking button 'xpath=(//button[normalize-space()="Book Appointment"])[1]'.</msg>
+<arg>${BUTTON_PATH}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-04T15:09:01.586885" elapsed="0.547274"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Clicked button with label ${LABEL}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-04T15:09:02.134347" elapsed="0.000510"/>
+</kw>
+<arg>${BOOK_APPOINTMENT_BTN}</arg>
+<status status="PASS" start="2026-03-04T15:09:01.520380" elapsed="0.614724"/>
+</kw>
+<status status="PASS" start="2026-03-04T15:09:01.520073" elapsed="0.615160"/>
+</kw>
+<kw name="Error Alert Should Be" owner="status_label_page">
+<kw name="Get Error Alert Message" owner="status_label_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ERROR_ALERT}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-04T15:09:02.137153" elapsed="0.029231"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-03-04T15:09:02.215294" level="INFO">${msg} = Select Appointment Type</msg>
+<var>${msg}</var>
+<arg>${ERROR_ALERT}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-04T15:09:02.166571" elapsed="0.048767"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-03-04T15:09:02.215707" level="INFO">${msg} = Select Appointment Type</msg>
+<var>${msg}</var>
+<arg>${msg}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-03-04T15:09:02.215508" elapsed="0.000228"/>
+</kw>
+<return>
+<value>${msg}</value>
+<status status="PASS" start="2026-03-04T15:09:02.215803" elapsed="0.000072"/>
+</return>
+<msg time="2026-03-04T15:09:02.216021" level="INFO">${actual} = Select Appointment Type</msg>
+<var>${actual}</var>
+<status status="PASS" start="2026-03-04T15:09:02.136857" elapsed="0.079190"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-03-04T15:09:02.216170" elapsed="0.000330"/>
+</kw>
+<arg>Select Appointment Type</arg>
+<status status="PASS" start="2026-03-04T15:09:02.135960" elapsed="0.080614"/>
+</kw>
+<status status="PASS" start="2026-03-04T15:09:01.229178" elapsed="0.987689"/>
+</test>
+<test id="s1-t3" name="Validate Start Time Is Mandatory" line="20">
+<kw name="Select Appointment Type" owner="book_appointment_page">
+<kw name="Dropdown With Label" owner="Dropdowns">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-03-04T15:09:02.219258" level="INFO">${BASE_PATH} = //div[label[text()="Appointment Type"]]/following-sibling::</msg>
+<var>${BASE_PATH}</var>
+<arg>//div[label[text()="${LABEL}"]]/following-sibling::</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-03-04T15:09:02.218713" elapsed="0.000661"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-03-04T15:09:02.220243" level="INFO">${DROPDOWN_PATH} = xpath=(//div[label[text()="Appointment Type"]]/following-sibling::div/div/select)[1]</msg>
+<var>${DROPDOWN_PATH}</var>
+<arg>xpath=(${BASE_PATH}div/div/select)[${INDEX}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-03-04T15:09:02.219742" elapsed="0.000543"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${DROPDOWN_PATH}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-04T15:09:02.220470" elapsed="0.164373"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2026-03-04T15:09:02.385269" level="INFO">Selecting options from selection list 'xpath=(//div[label[text()="Appointment Type"]]/following-sibling::div/div/select)[1]' by label Initial consultation.</msg>
+<arg>${DROPDOWN_PATH}</arg>
+<arg>${VALUE}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2026-03-04T15:09:02.385029" elapsed="0.209904"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Dropdown with label ${LABEL} selected value ${VALUE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-04T15:09:02.595123" elapsed="0.000542"/>
+</kw>
+<arg>Appointment Type</arg>
+<arg>${Appointment Type}</arg>
+<status status="PASS" start="2026-03-04T15:09:02.218314" elapsed="0.377438"/>
+</kw>
+<arg>Initial consultation</arg>
+<status status="PASS" start="2026-03-04T15:09:02.218032" elapsed="0.377782"/>
+</kw>
+<kw name="Click Book Appointment" owner="book_appointment_page">
+<kw name="Button Click" owner="Buttons">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-03-04T15:09:02.596925" level="INFO">${BASE_PATH} = //button[normalize-space()="Book Appointment"]</msg>
+<var>${BASE_PATH}</var>
+<arg>//button[normalize-space()="${LABEL}"]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-03-04T15:09:02.596632" elapsed="0.000325"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-03-04T15:09:02.597376" level="INFO">${BUTTON_PATH} = xpath=(//button[normalize-space()="Book Appointment"])[1]</msg>
+<var>${BUTTON_PATH}</var>
+<arg>xpath=(${BASE_PATH})[${INDEX}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-03-04T15:09:02.597077" elapsed="0.000329"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BUTTON_PATH}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-04T15:09:02.597528" elapsed="0.016758"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-03-04T15:09:02.614677" level="INFO">Clicking button 'xpath=(//button[normalize-space()="Book Appointment"])[1]'.</msg>
+<arg>${BUTTON_PATH}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-04T15:09:02.614469" elapsed="0.077188"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Clicked button with label ${LABEL}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-04T15:09:02.691839" elapsed="0.000460"/>
+</kw>
+<arg>${BOOK_APPOINTMENT_BTN}</arg>
+<status status="PASS" start="2026-03-04T15:09:02.596358" elapsed="0.096023"/>
+</kw>
+<status status="PASS" start="2026-03-04T15:09:02.596088" elapsed="0.096353"/>
+</kw>
+<kw name="Error Alert Should Be" owner="status_label_page">
+<kw name="Get Error Alert Message" owner="status_label_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ERROR_ALERT}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-04T15:09:02.693196" elapsed="0.015334"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-03-04T15:09:02.723492" level="INFO">${msg} = Select Start Appointment Time</msg>
+<var>${msg}</var>
+<arg>${ERROR_ALERT}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-04T15:09:02.708752" elapsed="0.014788"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-03-04T15:09:02.723961" level="INFO">${msg} = Select Start Appointment Time</msg>
+<var>${msg}</var>
+<arg>${msg}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-03-04T15:09:02.723720" elapsed="0.000271"/>
+</kw>
+<return>
+<value>${msg}</value>
+<status status="PASS" start="2026-03-04T15:09:02.724054" elapsed="0.000050"/>
+</return>
+<msg time="2026-03-04T15:09:02.724263" level="INFO">${actual} = Select Start Appointment Time</msg>
+<var>${actual}</var>
+<status status="PASS" start="2026-03-04T15:09:02.692990" elapsed="0.031303"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-03-04T15:09:02.724437" elapsed="0.000395"/>
+</kw>
+<arg>Select Start Appointment Time</arg>
+<status status="PASS" start="2026-03-04T15:09:02.692705" elapsed="0.032218"/>
+</kw>
+<status status="PASS" start="2026-03-04T15:09:02.217585" elapsed="0.507709"/>
+</test>
+<test id="s1-t4" name="Validate Referral Doctor Is Mandatory" line="25">
+<kw name="Select Start Time" owner="book_appointment_page">
+<kw name="Dropdown With Label" owner="Dropdowns">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-03-04T15:09:02.727397" level="INFO">${BASE_PATH} = //div[label[text()="Start Time"]]/following-sibling::</msg>
+<var>${BASE_PATH}</var>
+<arg>//div[label[text()="${LABEL}"]]/following-sibling::</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-03-04T15:09:02.727074" elapsed="0.000357"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-03-04T15:09:02.727858" level="INFO">${DROPDOWN_PATH} = xpath=(//div[label[text()="Start Time"]]/following-sibling::div/div/select)[1]</msg>
+<var>${DROPDOWN_PATH}</var>
+<arg>xpath=(${BASE_PATH}div/div/select)[${INDEX}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-03-04T15:09:02.727556" elapsed="0.000333"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${DROPDOWN_PATH}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-04T15:09:02.728028" elapsed="0.018096"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2026-03-04T15:09:02.746556" level="INFO">Selecting options from selection list 'xpath=(//div[label[text()="Start Time"]]/following-sibling::div/div/select)[1]' by label 9:00 PM.</msg>
+<arg>${DROPDOWN_PATH}</arg>
+<arg>${VALUE}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2026-03-04T15:09:02.746315" elapsed="0.080600"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Dropdown with label ${LABEL} selected value ${VALUE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-04T15:09:02.827108" elapsed="0.000550"/>
+</kw>
+<arg>Start Time</arg>
+<arg>${Start Time}</arg>
+<status status="PASS" start="2026-03-04T15:09:02.726778" elapsed="0.100978"/>
+</kw>
+<arg>9:00 PM</arg>
+<status status="PASS" start="2026-03-04T15:09:02.726477" elapsed="0.101347"/>
+</kw>
+<kw name="Click Book Appointment" owner="book_appointment_page">
+<kw name="Button Click" owner="Buttons">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-03-04T15:09:02.829006" level="INFO">${BASE_PATH} = //button[normalize-space()="Book Appointment"]</msg>
+<var>${BASE_PATH}</var>
+<arg>//button[normalize-space()="${LABEL}"]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-03-04T15:09:02.828691" elapsed="0.000347"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-03-04T15:09:02.829464" level="INFO">${BUTTON_PATH} = xpath=(//button[normalize-space()="Book Appointment"])[1]</msg>
+<var>${BUTTON_PATH}</var>
+<arg>xpath=(${BASE_PATH})[${INDEX}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-03-04T15:09:02.829163" elapsed="0.000331"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BUTTON_PATH}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-04T15:09:02.829622" elapsed="0.014222"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-03-04T15:09:02.844237" level="INFO">Clicking button 'xpath=(//button[normalize-space()="Book Appointment"])[1]'.</msg>
+<arg>${BUTTON_PATH}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-04T15:09:02.844029" elapsed="0.091436"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Clicked button with label ${LABEL}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-04T15:09:02.935657" elapsed="0.000463"/>
+</kw>
+<arg>${BOOK_APPOINTMENT_BTN}</arg>
+<status status="PASS" start="2026-03-04T15:09:02.828406" elapsed="0.107796"/>
+</kw>
+<status status="PASS" start="2026-03-04T15:09:02.828125" elapsed="0.108136"/>
+</kw>
+<kw name="Error Alert Should Be" owner="status_label_page">
+<kw name="Get Error Alert Message" owner="status_label_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ERROR_ALERT}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-04T15:09:02.937027" elapsed="0.015927"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-03-04T15:09:02.968489" level="INFO">${msg} = Select Referral Doctor</msg>
+<var>${msg}</var>
+<arg>${ERROR_ALERT}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-04T15:09:02.953141" elapsed="0.015394"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-03-04T15:09:02.968909" level="INFO">${msg} = Select Referral Doctor</msg>
+<var>${msg}</var>
+<arg>${msg}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-03-04T15:09:02.968705" elapsed="0.000234"/>
+</kw>
+<return>
+<value>${msg}</value>
+<status status="PASS" start="2026-03-04T15:09:02.968998" elapsed="0.000041"/>
+</return>
+<msg time="2026-03-04T15:09:02.969165" level="INFO">${actual} = Select Referral Doctor</msg>
+<var>${actual}</var>
+<status status="PASS" start="2026-03-04T15:09:02.936818" elapsed="0.032375"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-03-04T15:09:02.969306" elapsed="0.000312"/>
+</kw>
+<arg>Select Referral Doctor</arg>
+<status status="PASS" start="2026-03-04T15:09:02.936527" elapsed="0.033164"/>
+</kw>
+<status status="PASS" start="2026-03-04T15:09:02.726019" elapsed="0.243929"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-03-04T15:09:02.970889" elapsed="2.198837"/>
+</kw>
+<status status="PASS" start="2026-03-04T15:08:51.559336" elapsed="13.610688"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="From Calendar Tests" id="s1" pass="4" fail="0" skip="0">From Calendar Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
