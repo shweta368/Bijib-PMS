@@ -15,8 +15,16 @@ Open Browser Login And Goto Dashboard
     Log To Console    Logged in and navigated to dashboard
 
 Open Browser Keyword
-    Open Browser    ${BASE_URL}    ${BROWSER}
-    Maximize Browser Window
+    ${chrome_options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys
+    Call Method    ${chrome_options}    add_argument    --headless
+    Call Method    ${chrome_options}    add_argument    --no-sandbox
+    Call Method    ${chrome_options}    add_argument    --disable-dev-shm-usage
+    Create WebDriver    Chrome    options=${chrome_options}
+    Go To    ${BASE_URL}
+
+
+    # Open Browser    ${BASE_URL}    ${BROWSER}
+    # Maximize Browser Window
     Set Selenium Speed    ${SELENIUM_SPEED}
     Title Should Be    ${WEB_TITLE}
 Close Browser Keyword
