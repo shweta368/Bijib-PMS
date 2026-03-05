@@ -21,17 +21,17 @@ Validate First Name Is Mandatory
     Error Alert Should Be    Please enter First Name
 
 Validate First Name Allows Only Alphabets
-    Enter First Name   sharu123
+    Enter First Name   kavya123
     Click Save
     Error Alert Should Be    First Name allows alphabets only
 
 Validate Last Name Is Mandatory
-    Enter First Name    singh
+    Enter First Name    kumari
     Click Save
     Error Alert Should Be    Please enter Last Name
 
 Validate Last Name Allows Only Alphabets
-    Enter Last Name    singh456
+    Enter Last Name    kavya456
     Click Save
     Error Alert Should Be    Last Name allows alphabets only
 
@@ -61,18 +61,18 @@ Validate Mobile Number Is 10 Digits
     Error Alert Should Be    Mobile Number Must be 10 digits
 
 Validate Email Is Mandatory
-    Enter Mobile    9849601688
+    Enter Mobile    9849601655
     Click Save
     Error Alert Should Be    Please enter Email
 
 Validate Email Is Valid
-    Enter Email    karuna@com
+    Enter Email    kavya@com
     Click Save
     Error Alert Should Be    Please enter valid Email
 
 #Address Details
 Validate Address Is Mandatory
-    Enter Email    sign@gmail.com
+    Enter Email    kavya@gmail.com
     Click Save
     Error Alert Should Be    Please enter address
 
@@ -99,7 +99,7 @@ Validate Postal Code Is Mandatory
 
 # EmergencyContact
 Validate Emergency Contact Name Is Mandatory
-    Enter Postal Code    500031
+    Enter Postal Code    500034
     Click Save
     Error Alert Should Be    Please enter Emergency Contact Person Name
 
@@ -119,7 +119,7 @@ Validate Emergency Contact Mobile Number Is Number
     Error Alert Should Be    Emergency Contact Mobile Number Must be Number
 
 Validate Emergency Contact Mobile Number Must be 10 Digits
-    Enter Emergency Contact Mobile    987654188
+    Enter Emergency Contact Mobile    987654155
     Click Save
     Error Alert Should Be    Emergency Contact Mobile Number Must be 10 digits
 
@@ -131,14 +131,14 @@ Validate IHI Number
     Enter Emergency Contact Mobile    3698520145
     Log To Console    is_ihi_mandatory: ${is_ihi_mandatory}
     IF    ${is_ihi_mandatory}
-        Enter Full IHI Number    12    1234    5698
+        Enter Full IHI Number    12    1234    5633
         Click Save
         Error Alert Should Be    IHI Number Must be 16 digits
     END
 
 Validate Add New Patient Successfully
     IF    ${is_ihi_mandatory}
-        Enter Full IHI Number    12    1234    5698
+        Enter Full IHI Number    12    1234    5633
     END
     Click Save
     Success Alert Should Be    Record added successfully
