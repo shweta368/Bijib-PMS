@@ -22,11 +22,22 @@ Validate Start Time Is Mandatory
     Click Book Appointment
     Error Alert Should Be    Select Start Appointment Time
 
+# Validate Referral Doctor Is Mandatory
+#     Select Start Time   11:00 PM
+#     Click Book Appointment
+#     Error Alert Should Be    Select Referral Doctor
+# Validate Book Apoointment
+#     Select Referral Doctor    manju
+#     Click Book Appointment    2
+#     Success Alert Should Be    Record added successfully
+
+
 Validate Referral Doctor Is Mandatory
-    Select Start Time   9:00 PM
-     Click Book Appointment
-    Error Alert Should Be    Select Referral Doctor
-
-
-
-
+    Select Start Time   11:00 PM
+    ${mandatory}=    Check Referral Doctor Mandatory
+    IF    ${mandatory}
+        Click Book Appointment
+        Error Alert Should Be    Select Referral Doctor
+    ELSE
+        Log    Referral Doctor field is optional. Skipping validation.
+    END

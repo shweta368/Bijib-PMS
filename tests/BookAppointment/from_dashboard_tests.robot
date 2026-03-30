@@ -2,31 +2,37 @@
 Resource    ../../variables/Common.robot
 Resource    ../../pages/status_label_page.robot
 Resource    ../../pages/book_appointment_page.robot 
+Library    DataDriver    file=../../data/dashboard_bookappointment_data.csv    dialect=excel    encoding=UTF-8
 
-Suite Setup    Open Book Appointment On Dashboard    John Lee
+Suite Setup    Open Book Appointment On Dashboard   Aiko
 Suite Teardown    Close Browser
+Test Template    Fill Book Appointment Form From Dashboard
 
+*** Variables ***
 
 *** Test Cases ***
-Validate Doctor Is Mandatory
+Validate Book Appointment Flow with Valid Data CSV
+
+
+*** Keywords ***
+Fill Book Appointment Form From Dashboard
+    [Arguments]    
+    ...    ${Doctor}=${EMPTY}    
+    ...    ${AppointmentType}=${EMPTY}    
+    ...    ${StartTime}=${EMPTY}    
+    ...    ${ReferralDoctor}=${EMPTY}
+    ...    ${ExpectedResult}=${EMPTY}
+    ...    ${ExpectedAlert}=${EMPTY} 
+
+    Set Selenium Speed    0.3s
+
+    Select Doctor              ${Doctor}
+    Select Appointment Type    ${AppointmentType}
+    Select Start Time          ${StartTime}
+    Select Referral Doctor     ${ReferralDoctor}
     Click Book Appointment
-    Error Alert Should Be    Select Doctor
-
-Validate Appointment Type Is Mandatory
-    Select Doctor    test User3
-    Click Book Appointment
-    Error Alert Should Be    Select Appointment Type
-
-Validate Start Time Is Mandatory
-    Select Appointment Type   Initial consultation
-    Click Book Appointment
-    Error Alert Should Be    Select Start Appointment Time
-
-Validate Referral Doctor Is Mandatory
-    Select Start Time   9:00 PM
-     Click Book Appointment
-    Error Alert Should Be    Select Referral Doctor
-
-
-
+    Run Keyword If    '${ExpectedResult}'=='Success'
+    ...    Success Alert Should Be    ${ExpectedAlert}
+    ...    ELSE
+    ...    Error Alert Should Be      ${ExpectedAlert}
 

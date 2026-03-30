@@ -42,6 +42,10 @@ Select Date Of Birth
     [Arguments]    ${year}    ${month}    ${day}
     Select Date With Label    Date of Birth    ${year}    ${month}    ${day}
 
+Select Mobile Code
+    [Arguments]    ${mobile_code}    ${index}=1
+    Textfield With Dropdown    Mobile    ${mobile_code}    ${index}
+
 Enter Mobile
     [Arguments]    ${mobile}    ${index}=1
     Textfield With Label    Mobile    ${mobile}    ${index}

@@ -26,7 +26,7 @@ Validate First Name Allows Only Alphabets
     Error Alert Should Be    First Name allows alphabets only
 
 Validate Last Name Is Mandatory
-    Enter First Name    likitha
+    Enter First Name    siri
     Click Save
     Error Alert Should Be    Please enter Last Name
 
@@ -36,7 +36,7 @@ Validate Last Name Allows Only Alphabets
     Error Alert Should Be    Last Name allows alphabets only
 
 Validate Gender Is Mandatory
-    Enter Last Name    Margoni
+    Enter Last Name    rai
     Click Save
     Error Alert Should Be    Please Select Gender
 
@@ -46,22 +46,23 @@ Validate Date of Birth Is Mandatory
     Error Alert Should Be    Please enter Date of Birth
 
 Validate Mobile Number Is Mandatory
-    Select Date Of Birth    1998    Feb    05
+    Select Date Of Birth    1998    Feb    06
+    Select Mobile Code    IN
     Click Save
     Error Alert Should Be    Please enter Mobile Number
 
-Validate Mobile Number Is Valid
+Validate Mobile Number Is Number
     Enter Mobile    abc15
     Click Save
     Error Alert Should Be    Mobile Number Must be Number
 
-Validate Mobile Number Is 10 Digits
+Validate Mobile Number Is Valid
     Enter Mobile    984960160258
     Click Save
-    Error Alert Should Be    Mobile Number Must be 10 digits
+    Error Alert Should Be    Invalid Mobile Number
 
 Validate Email Is Mandatory
-    Enter Mobile    9849601605
+    Enter Mobile    9849601645
     Click Save
     Error Alert Should Be    Please enter Email
 
@@ -72,7 +73,7 @@ Validate Email Is Valid
 
 #Address Details
 Validate Address Is Mandatory
-    Enter Email    bijibsoft@bjbsoft.com
+    Enter Email    siri@bjbsoft.com
     Click Save
     Error Alert Should Be    Please enter address
 
@@ -110,6 +111,7 @@ Validate Emergency Contact Gender Is Mandatory
 
 Validate Emergency Contact Mobile Number Is Mandatory
     Select Emergency Contact Gender    Male
+    Select Mobile Code    IN    2
     Click Save
     Error Alert Should Be    Please enter Emergency Contact Mobile Number
 
@@ -118,10 +120,10 @@ Validate Emergency Contact Mobile Number Is Number
     Click Save
     Error Alert Should Be    Emergency Contact Mobile Number Must be Number
 
-Validate Emergency Contact Mobile Number Must be 10 Digits
+Validate Emergency Contact Mobile Number Is Valid
     Enter Emergency Contact Mobile    987654111
     Click Save
-    Error Alert Should Be    Emergency Contact Mobile Number Must be 10 digits
+    Error Alert Should Be    Invalid Emergency Contact Mobile Number
 
 Set IHI Mandatory Variable
     ${result}=    Is IHI Number Mandatory
@@ -131,14 +133,14 @@ Validate IHI Number
     Enter Emergency Contact Mobile    3698520145
     Log To Console    is_ihi_mandatory: ${is_ihi_mandatory}
     IF    ${is_ihi_mandatory}
-        Enter Full IHI Number    12    1234    3333
+        Enter Full IHI Number    12    1234    2222
         Click Save
         Error Alert Should Be    IHI Number Must be 16 digits
     END
 
 Validate Add New Patient Successfully
     IF    ${is_ihi_mandatory}
-        Enter Full IHI Number    12    1234    3333
+        Enter Full IHI Number    12    1234    2222
     END
     Click Save
     Success Alert Should Be    Record added successfully

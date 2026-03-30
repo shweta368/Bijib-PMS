@@ -1,0 +1,7 @@
+*** Test Cases ***,${Doctor},${AppointmentType},${StartTime},${ReferralDoctor},${ExpectedResult},${ExpectedAlert}
+TC1,Select,Select,Select,Select,Error,Select Doctor
+TC2,test User3,Select,Select,Select,Error,Select Appointment Type
+TC3,test User3,Initial consultation,,,Error,Select Start Appointment Time
+TC4,test User3,Initial consultation,11:45 PM,,Error,Select Patient Title
+TC5,test User3,Initial consultation,11:45 PM,,Error,Select Referral Doctor
+TC6,test User3,Initial consultation,11:45 PM,manju,Success,Record added successfully

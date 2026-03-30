@@ -28,16 +28,16 @@ Open Book Appointment On Dashboard
     Click Element With Path    //div[@title="Book Appointment"]
 
 Open Book Appointment In Calendar
-    [Arguments]    ${PatientName}
-    Wait Until Page Contains Element    Click Element    xpath=//lib-button[normalize-space(@label)="Calendar"]//button  10s
-    Click Element    xpath=Click Element    xpath=//lib-button[normalize-space(@label)="Calendar"]
-    Click Element   (//button[normalize-space()='Book Appointment'])[1]
-    Button Click    ${BOOK_APPOINTMENT_BTN}
+    Open Browser Login And Goto Dashboard
+    Button Click    Calendar
+    Button Click    Book Appointment
+
 
 Click Book Appointment
-    Button Click    ${BOOK_APPOINTMENT_BTN}
+    [Arguments]    ${INDEX}=1
+    Button Click    ${BOOK_APPOINTMENT_BTN}    ${INDEX}
 
-    # --- Patient Details ---
+# --- Patient Details ---
 Select Doctor
     [Arguments]    ${Doctor}
     Dropdown With Label    Doctor    ${Doctor}
@@ -50,11 +50,19 @@ Select Start Time
    [Arguments]    ${Start Time}
     Dropdown With Label    Start Time    ${Start Time}
 
+Select Patient
+    [Arguments]    ${Patient}
+    Textfield With Placeholder    Search Patient    ${Patient}
+    Click Element With Path    //lib-autocomplete/div/div/div/div/div/div[contains(text(),"${Patient}")]
+
 Select Referral Doctor
    [Arguments]    ${Referral Doctor}
     Dropdown With Label   Referral Doctor    ${Referral Doctor}
 
-
-
+Check Referral Doctor Mandatory
+    ${status}=    Run Keyword And Return Status
+    ...    Element Should Be Visible
+    ...    xpath=//label[contains(text(),'Referral Doctor')]
+    RETURN    ${status}
 
 

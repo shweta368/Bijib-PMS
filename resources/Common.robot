@@ -21,11 +21,11 @@ Open Browser Keyword
     Call Method    ${chrome_options}    add_argument    --disable-dev-shm-usage
     Create WebDriver    Chrome    options=${chrome_options}
     Go To    ${BASE_URL}
-
-
+    Set Selenium Speed    ${SELENIUM_SPEED}
+    
     # Open Browser    ${BASE_URL}    ${BROWSER}
     # Maximize Browser Window
-    Set Selenium Speed    ${SELENIUM_SPEED}
+    # Set Selenium Speed    ${SELENIUM_SPEED}
     Title Should Be    ${WEB_TITLE}
 Close Browser Keyword
     Close Browser
