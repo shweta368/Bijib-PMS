@@ -16,23 +16,23 @@ Validate Book Appointment Flow with Valid Data CSV
 
 *** Keywords ***
 Fill Book Appointment Form From Calendar
-    [Arguments]    
-    ...    ${Doctor}=${EMPTY}    
-    ...    ${AppointmentType}=${EMPTY}    
-    ...    ${StartTime}=${EMPTY}    
-    ...    ${Patient}=${EMPTY}    
-    ...    ${ReferralDoctor}=${EMPTY}
-    ...    ${ExpectedResult}=${EMPTY}
-    ...    ${ExpectedAlert}=${EMPTY} 
+    [Arguments]    ${year}    ${month}    ${day}    ${Doctor}    ${AppointmentType}    ${StartTime}    ${Patient}    ${ReferralDoctor}    ${ExpectedResult}    ${ExpectedAlert} 
 
-    Select Doctor              ${Doctor}
-    Select Appointment Type    ${AppointmentType}
-    Select Start Time          ${StartTime}
-    Select Patient             ${Patient}
-    Select Referral Doctor     ${ReferralDoctor}
+    Sleep    3s
+
+    Run Keyword If    '${year}' != '' and '${month}' != '' and '${day}' != ''    Select Appointment Date    ${year}    ${month}    ${day}
+    Run Keyword If    '${Doctor}' != ''    Select Doctor              ${Doctor}
+    Run Keyword If    '${AppointmentType}' != ''    Select Appointment Type    ${AppointmentType}
+    Run Keyword If    '${StartTime}' != ''    Select Start Time          ${StartTime}
+    Run Keyword If    '${Patient}' != ''    Select Patient              ${Patient}
+
+
+    ${status}=    Check Referral Doctor Mandatory
+    Run Keyword If    ${status} and '${ReferralDoctor}' != ''    Select Referral Doctor    ${ReferralDoctor}
     Click Book Appointment    2
-    Run Keyword If    '${ExpectedResult}'=='Success'
-    ...    Success Alert Should Be    ${ExpectedAlert}
-    ...    ELSE
-    ...    Error Alert Should Be      ${ExpectedAlert}
 
+    IF    '${ExpectedResult}' == 'Success'
+        Success Alert Should Be    ${ExpectedAlert}
+    ELSE
+        Error Alert Should Be      ${ExpectedAlert}
+    END

@@ -15,7 +15,7 @@ Get Error Alert Message
     RETURN    ${msg}
 
 Get Success Alert Message
-    Wait Until Element Is Visible    ${SUCCESS_ALERT}    10s
+    Wait Until Element Is Visible    ${SUCCESS_ALERT}    timeout=${TIMEOUT}
     ${msg}=    Get Text    ${SUCCESS_ALERT}
     ${msg}=    Strip String    ${msg}
     RETURN    ${msg}

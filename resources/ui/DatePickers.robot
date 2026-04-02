@@ -7,7 +7,7 @@ Select Date With Label
     [Arguments]    ${LABEL}    ${YEAR}    ${MONTH}    ${DAY}
 
     # Base paths
-    ${BASE_PATH}=    Set Variable    //lib-datepicker/div/div/div[label[text()="${LABEL}"]]/following-sibling::
+    ${BASE_PATH}=    Set Variable    //lib-datepicker//label[normalize-space(text())='${LABEL}']/following::
     ${DP_POPUP_PATH}=    Set Variable    (${BASE_PATH}div/div)[2]
 
     # Scroll date picker into view
