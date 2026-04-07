@@ -1,24 +1,20 @@
-*** Test Cases ***,${title},${first_name},${last_name},${gender},${year},${month},${day},${mobile_code},${mobile},${email},${address},${suburb},${state},${country},${postal},${ec_name},${ec_gender},${ec_mobile},${ihi1},${ihi2},${ihi3},${expected_message}
-TC1 - Validate Title is Mandatory,Select,,,,,,,,,,,,,,,,,,,,,Please select Title
-TC2 - Validate First Name is Mandatory,Ms,,,,,,,,,,,,,,,,,,,,,Please enter First Name
-TC3 - Validate First Name Accepts Only Alphabets,,sharu123,,,,,,,,,,,,,,,,,,,,First Name allows alphabets only
-TC4 - Validate Last Name is Mandatory,,sharu,,,,,,,,,,,,,,,,,,,,Please enter Last Name
-TC5 - Validate Last Name Accepts Only Alphabets,,,kumari123,,,,,,,,,,,,,,,,,,,Last Name allows alphabets only
-TC6 - Validate Gender Selection is Mandatory,,,kumari,,,,,,,,,,,,,,,,,,,Please Select Gender
-TC7 - Validate Date of Birth is Mandatory,,,,Female,,,,,,,,,,,,,,,,,,Please enter Date of Birth
-TC8 - Validate Mobile Number is Mandatory,,,,,1997,Mar,30,,,,,,,,,,,,,,,Please enter Mobile Number
-TC9 - Validate Mobile Number Accepts Only Digits,,,,,,,,IN,984960160@,,,,,,,,,,,,,Mobile Number Must be Number
-TC10 - Validate Invalid Mobile Number Format,,,,,,,,,,,,,,,,,984960160258,,,,,Invalid Mobile Number
-TC11 - Validate Email Id is Mandatory,,,,,,,,,9849602605,,,,,,,,,,,,,Mobile Number Must be 10 digits
-TC12 - Validate Address is Mandatory,,,,,,,,,,sharu@gmail.com,,,,,,,,,,,,Please enter address
-TC13 - Validate Suburb is Mandatory,,,,,,,,,,,152 beigh lay,,,,,,,,,,,Please enter suburb
-TC14 - Validate State is Mandatory,,,,,,,,,,,,Banglore,,,,,,,,,,Please enter state
-TC15 - Validate Country is Mandatory,,,,,,,,,,,,,karnataka,,,,,,,,,Please enter country
-TC16 - Validate Postal Code is Mandatory,,,,,,,,,,,,,,India,,,,,,,,Please enter postal code
-TC17 - Validate Emergency Contact Name is Mandatory,,,,,,,,,,,,,,,503262,,,,,,,Please enter Emergency Contact Person Name
-TC18 - Validate Emergency Contact Gender is Mandatory,,,,,,,,,,,,,,,,Kritika,,,,,,Please select Gender
-TC19 - Validate Emergency Contact Mobile Number is Mandatory,,,,,,,,,,,,,,,,,Female,,,,,Please enter Emergency Contact Mobile Number
-TC20 - Validate Emergency Contact Mobile Accepts Only Digits,,,,,,,,,,,,,,,,,,9849658569,,,,Emergency Contact Mobile Number Must be Number
-TC21 - Validate Invalid Emergency Contact Mobile Number,,,,,,,,,,,,,,,,,,98496768953,,,,Invalid Emergency Contact Mobile Number
-TC22- Validate IHI Number Must Be 16 Digits,,,,,,,,,,,,,,,,,,,12,1234,5463,IHI Number Must be 16 digits
-TC23- Validate Successful Patient Registration,,,,,,,,,,,,,,,,,,,,,,Record added successfully
+*** Test Cases ***,${title},${first_name},${last_name},${gender},${year},${month},${day},${mobile_code},${mobile},${email},${address},${state},${suburb},${postal},${ec_name},${ec_gender},${ec_mobile_code},${ec_mobile},${expected_message}
+TC1 - Validate Title is Mandatory,Select,,,,,,,,,,,,,,,,,,Please select Title
+TC2 - Validate First Name is Mandatory,Ms,,,,,,,,,,,,,,,,,,Please enter First Name
+TC3 - Validate First Name Accepts Only Alphabets,,shrika123,,,,,,,,,,,,,,,,,First Name allows alphabets only
+TC4 - Validate Last Name is Mandatory,,soukya,,,,,,,,,,,,,,,,,Please enter Last Name
+TC5 - Validate Last Name Accepts Only Alphabets,,,kumari123,,,,,,,,,,,,,,,,Last Name allows alphabets only
+TC6 - Validate Gender Selection is Mandatory,,,kumari,,,,,,,,,,,,,,,,Please Select Gender
+TC7 - Validate Date of Birth is Mandatory,,,,Female,,,,,,,,,,,,,,,Please enter Date of Birth
+TC8 - Validate Mobile Number is Mandatory,,,,,1997,Mar,28,,,,,,,,,,,,Please enter Mobile Number
+TC9 - Validate Invalid Mobile Number Format,,,,,,,,IN,9849601poiuy,,,,,,,,,,Mobile Number Must be Number
+TC10 - Validate Email Id is Mandatory,,,,,,,,IN,9849602601,,,,,,,,,,Please enter Email
+TC11 - Validate Address is Mandatory,,,,,,,,,,soukya@gmail.com,,,,,,,,,Please enter address
+TC12 - Validate State is Mandatory,,,,,,,,,,,8sandhurstMEWS,,,,,,,,Please select state
+TC13 - Validate Suburb is Mandatory,,,,,,,,,,,,Victoria,,,,,,,Please enter suburb
+TC14 - Validate Postal Code is Mandatory,,,,,,,,,,,,,Hampton park,,,,,,Please enter postal code
+TC15 - Validate Emergency Contact Name is Mandatory,,,,,,,,,,,,,,3976,,,,,Please enter Emergency Contact Person Name
+TC16 - Validate Emergency Contact Gender is Mandatory,,,,,,,,,,,,,,,Kritika,,,,Please select Gender
+TC17 - Validate Emergency Contact Mobile Number is Mandatory,,,,,,,,,,,,,,,,Female,,,Please enter Emergency Contact Mobile Number
+TC19 - Validate Invalid Emergency Contact Mobile Number,,,,,,,,,,,,,,,,,IN,98496768951,Invalid Emergency Contact Mobile Number
+TC20- Validate Successful Patient Registration,,,,,,,,,,,,,,,,,IN,9849601621,Record added successfully

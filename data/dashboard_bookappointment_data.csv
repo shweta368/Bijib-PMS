@@ -1,5 +1,5 @@
 *** Test Cases ***,${year},${month},${day},${Doctor},${AppointmentType},${StartTime},${ReferralDoctor},${ExpectedResult},${ExpectedAlert}
-TC1,2026,Apr,03,Select,Select,Select,,Error,Select Doctor
+TC1,2026,Apr,11,Select,Select,Select,,Error,Select Doctor
 TC2,,,,test User3,Select,Select,,Error,Select Appointment Type
 TC3,,,,,Initial consultation,Select,,Error,Select Start Appointment Time
 TC4,,,,,,10:00 PM,,Error,Select Referral Doctor

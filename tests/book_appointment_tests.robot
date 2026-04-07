@@ -3,7 +3,7 @@ Resource    ../variables/Common.robot
 Resource    ../pages/status_label_page.robot
 Resource    ../pages/book_appointment_page.robot 
 
-Suite Setup    Open Book Appointment Slide In Patient    John Lee
+Suite Setup    Open Book Appointment Slide In Patient    Aiko Vincent    
 Suite Teardown    Close Browser
 
 

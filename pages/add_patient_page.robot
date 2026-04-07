@@ -20,6 +20,7 @@ Open Add Patient Slide
 
 Click Save
     Button Click    ${SAVE_BTN}
+    Log To Console    Clicked Save Button
 
 # --- Patient Details ---
 Select Title
@@ -66,25 +67,25 @@ Enter Address
     [Arguments]    ${address}
     Textfield With Label    Address    ${address}
 
+Select Country
+    [Arguments]    ${country}
+    Textfield With Label    Country    ${country}
+    
+Enter State
+    [Arguments]    ${state}
+    Dropdown With Label    State    ${state}
+
 Enter City
     [Arguments]    ${city}
     Textfield With Label    City    ${city}
 
 Enter Suburb
     [Arguments]    ${suburb}
-    Textfield With Label    Suburb    ${suburb}
-
-Enter State
-    [Arguments]    ${state}
-    Textfield With Label    State    ${state}
-
-Enter Country
-    [Arguments]    ${country}
-    Textfield With Label    Country    ${country}
+    Select Value From Autocomplete By Label    Suburb    ${suburb}
 
 Enter Postal Code
     [Arguments]    ${postal_code}
-    Textfield With Label    Postal Code    ${postal_code}
+    Select Value From Autocomplete By Label    Postcode    ${postal_code}
 
 # --- Emergency Contact Details ---
 Enter Emergency Contact Name

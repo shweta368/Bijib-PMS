@@ -3,7 +3,7 @@ Resource    ui/Buttons.robot
 Resource    ui/Dropdowns.robot
 Resource    ui/DatePickers.robot
 Resource    ui/TextFields.robot
-# Resource    ui/Checkboxes.robot
+Resource    ui/Autocomplete.robot
 # Resource    ui/Radios.robot
 
 *** Keywords ***
