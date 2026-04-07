@@ -7,4 +7,4 @@ ${TIMEOUT_LONG}    30s
 ${ENV}    TEST
 
 *** Settings ***
-Resource    ${ENV}.robot
+Resource    ${CURDIR}/${ENV}.robot

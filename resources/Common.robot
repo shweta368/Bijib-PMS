@@ -1,5 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
+Library    allure_robotframework
 Resource    ../variables/Common.robot
 Resource   ../resources/Login.robot
 Resource   ../resources/Service.robot
@@ -15,17 +16,21 @@ Open Browser Login And Goto Dashboard
     Log To Console    Logged in and navigated to dashboard
 
 Open Browser Keyword
-    ${chrome_options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys
-    Call Method    ${chrome_options}    add_argument    --headless
-    Call Method    ${chrome_options}    add_argument    --no-sandbox
-    Call Method    ${chrome_options}    add_argument    --disable-dev-shm-usage
-    Create WebDriver    Chrome    options=${chrome_options}
-    Go To    ${BASE_URL}
-    Set Selenium Speed    0.1s
+    # ${chrome_options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys
+    # Call Method    ${chrome_options}    add_argument    --headless
+    # Call Method    ${chrome_options}    add_argument    --no-sandbox
+    # Call Method    ${chrome_options}    add_argument    --disable-dev-shm-usage
+    # Create WebDriver    Chrome    options=${chrome_options}
+    # Go To    ${BASE_URL}
+    # Set Selenium Speed    0.1s
 
-    # Open Browser    ${BASE_URL}    ${BROWSER}
-    # Maximize Browser Window
-    # Set Selenium Speed    ${SELENIUM_SPEED}
+    Open Browser    ${BASE_URL}    ${BROWSER}
+    Maximize Browser Window
+    Set Selenium Speed    ${SELENIUM_SPEED}
     Title Should Be    ${WEB_TITLE}
 Close Browser Keyword
     Close Browser
+
+Attach Screenshot To Allure
+    Run Keyword If Test Failed    ${screenshot}=    Capture Page Screenshot
+    Run Keyword If Test Failed    Attach File    ${screenshot}    name=Failure Screenshot    
