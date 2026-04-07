@@ -8,13 +8,13 @@ TC6 - Validate Gender Selection is Mandatory,,,kumari,,,,,,,,,,,,,,,,Please Sele
 TC7 - Validate Date of Birth is Mandatory,,,,Female,,,,,,,,,,,,,,,Please enter Date of Birth
 TC8 - Validate Mobile Number is Mandatory,,,,,1997,Mar,28,,,,,,,,,,,,Please enter Mobile Number
 TC9 - Validate Invalid Mobile Number Format,,,,,,,,IN,9849601poiuy,,,,,,,,,,Mobile Number Must be Number
-TC10 - Validate Email Id is Mandatory,,,,,,,,IN,9849602601,,,,,,,,,,Please enter Email
+TC10 - Validate Email Id is Mandatory,,,,,,,,IN,9849602986,,,,,,,,,,Please enter Email
 TC11 - Validate Address is Mandatory,,,,,,,,,,soukya@gmail.com,,,,,,,,,Please enter address
-TC12 - Validate State is Mandatory,,,,,,,,,,,8sandhurstMEWS,,,,,,,,Please select state
-TC13 - Validate Suburb is Mandatory,,,,,,,,,,,,Victoria,,,,,,,Please enter suburb
-TC14 - Validate Postal Code is Mandatory,,,,,,,,,,,,,Hampton park,,,,,,Please enter postal code
-TC15 - Validate Emergency Contact Name is Mandatory,,,,,,,,,,,,,,3976,,,,,Please enter Emergency Contact Person Name
+TC12 - Validate State is Mandatory,,,,,,,,,,,351JayPL,,,,,,,,Please select state
+TC13 - Validate Suburb is Mandatory,,,,,,,,,,,,Tasmania,,,,,,,Please enter suburb
+TC14 - Validate Postal Code is Mandatory,,,,,,,,,,,,,Bracknell,,,,,,Please enter postal code
+TC15 - Validate Emergency Contact Name is Mandatory,,,,,,,,,,,,,,2602,,,,,Please enter Emergency Contact Person Name
 TC16 - Validate Emergency Contact Gender is Mandatory,,,,,,,,,,,,,,,Kritika,,,,Please select Gender
 TC17 - Validate Emergency Contact Mobile Number is Mandatory,,,,,,,,,,,,,,,,Female,,,Please enter Emergency Contact Mobile Number
-TC19 - Validate Invalid Emergency Contact Mobile Number,,,,,,,,,,,,,,,,,IN,98496768951,Invalid Emergency Contact Mobile Number
-TC20- Validate Successful Patient Registration,,,,,,,,,,,,,,,,,IN,9849601621,Record added successfully
+TC19 - Validate Invalid Emergency Contact Mobile Number,,,,,,,,,,,,,,,,,IN,98496768986,Invalid Emergency Contact Mobile Number
+TC20- Validate Successful Patient Registration,,,,,,,,,,,,,,,,,IN,9849601695,Record added successfully
