@@ -12,7 +12,15 @@ Login and Goto Dashboard
 
     Textfield With Placeholder    Enter Username    ${LOGINNAME}
     Textfield With Placeholder    Enter Password    ${PASSWORD}
+    
     Button Click    Login
+
+    # ${url}=    Get Location
+    # Log To Console    Current URL = ${url}
+
+
+# Capture Page Screenshot
+
 
     # 🔑 WAIT FOR REDIRECT AFTER LOGIN
     Wait Until Location Is    ${DASHBOARD_URL}    10s

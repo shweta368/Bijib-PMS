@@ -48,7 +48,7 @@ Validate Claimant Flow
     Run Keyword And Ignore Error    Enter Medicare Number    ${medicare}
     Run Keyword And Ignore Error    Enter Medicare IRN Number    ${irn}
 
-    Click Save
+    Click Update
 
     # --- Validation ---
     Run Keyword And Ignore Error    Error Alert Should Be    ${expected_error}

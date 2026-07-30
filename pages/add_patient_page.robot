@@ -13,13 +13,19 @@ ${SAVE_BTN}    Save
 *** Keywords ***
 Open Add Patient Slide
     Open Browser Login And Goto Dashboard
+    Capture Page Screenshot
     Page Selection    fa-grid-2 fa-light    Register Patient
+    Wait For Loader To Disappear
     Log to Console    Navigated to Patient Creation Page
     
     Button Click    ${ADD_PATIENT_BTN}
 
+    # Capture Page Screenshot
+    # Sleep    3s
+    
+
 Click Save
-    Button Click    ${SAVE_BTN}
+    Button Click    ${Save_BTN}
     Log To Console    Clicked Save Button
 
 # --- Patient Details ---
@@ -39,9 +45,22 @@ Select Gender
     [Arguments]    ${gender}    ${index}=1
     Dropdown With Label    Gender    ${gender}    ${index}
 
+# Select Date Of Birth
+#     [Arguments]    ${year}    ${month}    ${day}
+#     Select Date With Label    Date of Birth    ${year}    ${month}    ${day}
+
 Select Date Of Birth
     [Arguments]    ${year}    ${month}    ${day}
-    Select Date With Label    Date of Birth    ${year}    ${month}    ${day}
+
+    Wait Until Keyword Succeeds
+    ...    3x
+    ...    2s
+    ...    Select Date With Label
+    ...    Date of Birth
+    ...    ${year}
+    ...    ${month}
+    ...    ${day}   
+
 
 Select Mobile Code
     [Arguments]    ${mobile_code}    ${index}=1
@@ -49,7 +68,7 @@ Select Mobile Code
 
 Enter Mobile
     [Arguments]    ${mobile}    ${index}=1
-    Textfield With Label    Mobile    ${mobile}    ${index}
+    Textfield With Label    Mobile    ${mobile}    ${index}    
 
 Enter Email
     [Arguments]    ${email}    ${index}=1
@@ -57,7 +76,7 @@ Enter Email
 
 Enter Entitlement Number
     [Arguments]    ${entitlement}
-    Textfield With Label    Entitlement Number    ${entitlement}
+    Textfield With Label    Entitlement Number    ${entitlement}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ment}
 
 Enter Racf Id
     [Arguments]    ${racf}

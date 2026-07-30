@@ -13,7 +13,8 @@ ${MONDAY_ADD_TIME}      xpath=//div[contains(text(),'Monday')]/following::button
 ${TUESDAY_TOGGLE}       xpath=//div[contains(text(),'Tuesday')]/preceding::input[@type='checkbox'][1]
 ${TUESDAY_ADD_TIME}     xpath=//div[contains(text(),'Tuesday')]/following::button[contains(text(),'Add Consultation Time')][1]
 
-${SAVE_BUTTON}          xpath=//button[normalize-space()='Save']
+# ${Save_BUTTON}          xpath=//button[normalize-space()='Save']
+${SAVE_BTN}    xpath=//button[contains(@class,'btn-save')]
 
 *** Keywords ***
 
@@ -36,4 +37,4 @@ Add Tuesday Consultation Time
     Click Element    ${TUESDAY_ADD_TIME}
 
 Save Schedule
-    Click Element    ${SAVE_BUTTON}
+    Click Element    ${Save_BUTTON}

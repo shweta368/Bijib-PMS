@@ -4,7 +4,7 @@ ${WEB_TITLE}    Bijib
 ${SELENIUM_SPEED}    0s
 ${TIMEOUT}    20s
 ${TIMEOUT_LONG}    30s
-${ENV}    TEST
+${ENV}    QAT
 
 *** Settings ***
-Resource    ${CURDIR}/${ENV}.robot
+Resource    ${ENV}.robot

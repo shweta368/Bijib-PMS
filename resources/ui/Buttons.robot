@@ -1,5 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
+Resource    ../Common.robot
 
 *** Keywords ***
 Button Click
@@ -18,3 +19,15 @@ Click Element With Path
     Wait Until Element Is Visible    ${ELEMENT_PATH}    ${TIMEOUT}
     Click Element    ${ELEMENT_PATH}
     Log To Console    Clicked element with path ${PATH}
+
+# Click Element With Path
+#     [Arguments]    ${PATH}    ${INDEX}=1
+
+#     ${ELEMENT_PATH}=    Set Variable    xpath=(${PATH})[${INDEX}]
+
+#     Wait Until Element Is Visible    ${ELEMENT_PATH}    ${TIMEOUT}
+#     Wait Until Element Is Enabled    ${ELEMENT_PATH}    ${TIMEOUT}
+
+#     Click Element    ${ELEMENT_PATH}
+
+#     Log To Console    Clicked element with path ${PATH}
