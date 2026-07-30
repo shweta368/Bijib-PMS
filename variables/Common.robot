@@ -7,4 +7,4 @@ ${TIMEOUT_LONG}    30s
 ${ENV}    QAT
 
 *** Settings ***
-Resource    ${ENV}.robot
+Resource    ${CURDIR}/${ENV}.robot
