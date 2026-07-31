@@ -1,7 +1,7 @@
 *** Test Cases ***,${year},${month},${day},${Doctor},${AppointmentType},${StartTime},${Patient},${ReferralDoctor},${ExpectedResult},${ExpectedAlert}
-TC1,2026,Jul,30,Select,Select,Select,,,Error,Select Appointment Type
+TC1,2026,Jul,31,Select,Select,Select,,,Error,Select Appointment Type
 TC2,,,,test User3,Select,Select,,,Error,Select Appointment Type
 TC3,,,,,Initial Consultation,Select,,,Error,Select Start Appointment Time
-TC4,,,,,,11:15 PM,,,Error,Select Patient
+TC4,,,,,,11:00 PM,,,Error,Select Patient
 TC5,,,,,,,Aiko VINCENT,,Error,Select Referral Doctor
 TC6,,,,,,,,Dr Breenda - S,Success,Record added successfully

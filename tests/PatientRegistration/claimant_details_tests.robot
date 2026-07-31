@@ -39,16 +39,17 @@ Validate Claimant Flow
     Enter Postal Code    ${postal}
 
     # --- Always check claimant section (no IF) ---
-    Run Keyword And Ignore Error    Check Is Claimant Details Is Exists
+    ${minor}=    Is Patient Minor
 
-    # --- Claimant Fields (safe execution) ---
-    Run Keyword And Ignore Error    Enter Family Name    ${family_name}
-    Run Keyword And Ignore Error    Enter Given Name    ${given_name}
-    Run Keyword And Ignore Error    Select Claimant Gender    ${claimant_gender}
-    Run Keyword And Ignore Error    Enter Medicare Number    ${medicare}
-    Run Keyword And Ignore Error    Enter Medicare IRN Number    ${irn}
-
-    Click Update
+IF    ${minor}
+    Check Is Claimant Details Is Exists
+    Enter Family Name    ${family_name}
+    Enter Given Name    ${given_name}
+    Select Claimant Gender    ${claimant_gender}
+    Enter Medicare Number    ${medicare}
+    Enter Medicare IRN Number    ${irn}
+END
+    Click Save
 
     # --- Validation ---
     Run Keyword And Ignore Error    Error Alert Should Be    ${expected_error}

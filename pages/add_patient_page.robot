@@ -13,7 +13,7 @@ ${SAVE_BTN}    Save
 *** Keywords ***
 Open Add Patient Slide
     Open Browser Login And Goto Dashboard
-    Capture Page Screenshot
+    # Capture Page Screenshot
     Page Selection    fa-grid-2 fa-light    Register Patient
     Wait For Loader To Disappear
     Log to Console    Navigated to Patient Creation Page
@@ -169,7 +169,7 @@ Check Is Claimant Details Is Exists
     ...    Wait Until Element Is Visible
     ...    //h2[contains(@class,"card-title-text")][normalize-space(.)="Claimant Details"]
     ...    5s
-
+    RETURN    ${exists}
 Enter Family Name
     [Arguments]    ${family_name}
     Textfield With Label    Family Name    ${family_name}
